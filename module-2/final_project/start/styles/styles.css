@@ -52,5 +52,9 @@ img {
 }
 .logoContainer {
     width: 300px;
-    margin: auto;
+    margin: 0 auto;
+}
+.copyrightContainer {
+    text-align: center;
+    font-size: 22px;
 }
