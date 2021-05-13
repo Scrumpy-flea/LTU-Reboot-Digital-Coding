@@ -58,10 +58,12 @@ img {
     text-align: center;
     font-size: 22px;
 }
-/*
 .imageContainer {
-    display: flex;
+    display: flex; 
     flex-wrap: wrap;
-    width: 25%;
 }
-*/
+.imageContainer .imageWrap {
+    padding: 20px;
+    width: calc(25% - 40px);
+    text-align: center;
+}
