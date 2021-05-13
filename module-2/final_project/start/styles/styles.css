@@ -58,3 +58,10 @@ img {
     text-align: center;
     font-size: 22px;
 }
+/*
+.imageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+}
+*/
