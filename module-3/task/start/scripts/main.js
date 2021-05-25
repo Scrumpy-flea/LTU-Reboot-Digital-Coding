@@ -66,3 +66,96 @@ console.log(checkNumber(14));
 console.log(checkNumber(23));
 console.log(checkNumber(31));
 console.log(checkNumber(50));
+
+// Drinks Ordering. 
+
+function drinkOrder(drink, size) {
+    // console.log(drink);
+    // console.log(size);
+    let strMessage = 'You have ordered a ' + size;
+    blnValidated = true;
+    if(size != 'large' && size != 'medium' && size != 'small'){
+        blnValidated = 'false';
+        strMessage = 'You have ordered a size we do not sell of';
+    }
+    // if(drink != 'cola' && drink != 'lemon' && drink != 'orange'){
+    //     blnValidated = 'false';
+    //     strMessage = 'You have ordered a drink we do not sell.';
+    // }
+    if(blnValidated){
+    switch(drink){
+    case 'cola':
+        strMessage += ' Coca-Cola';
+    break;
+    case 'lemon':
+        strMessage += ' Schweppes';
+    break; 
+    case 'orange': 
+        strMessage += ' Tango';
+    break; 
+    default:
+        strMessage = 'You have ordered a drink we do not sell';
+        break;
+    }
+    console.log(strMessage);
+}
+}
+
+
+ drinkOrder('coffee', 'big');
+ drinkOrder('lemon', 'medium');
+ drinkOrder('cola', 'big');
+ drinkOrder('orange', 'small');
+ drinkOrder('cola', 'large');
+ drinkOrder('lemon', 'big');
+ drinkOrder('orange', 'big');
+ drinkOrder('lemon', 'large');
+ drinkOrder('coffee', 'small');
+
+// Calculator
+
+ function calculater(num1, num2, operator){
+    let sum;
+    let blnValidated = true;
+    if(isNaN(num1)) {
+        blnValidated = false;
+        sum = 'Number 1 is not a valid number.';
+    }
+    if(isNaN(num2)) {
+        blnValidated = false;
+        sum = 'Number 2 is not a valid number.';
+    }
+    if(blnValidated){
+     switch(operator) {
+         case '+': 
+           sum = num1 + num2;
+         break;
+         case "-": 
+            sum = num1 - num2;
+         break;
+         case '*':
+            sum = num1 * num2;
+         break;
+         case '/':
+            sum = num1 / num2;
+         break;
+         case '%': 
+            sum = num1 % num2;
+         break;
+         default:
+             sum = 'Operator is not valid';
+         break;
+     }
+     }
+     console.log(sum);
+}
+
+ calculater(10, 5, '*');
+ calculater(10, 5, '/');
+ calculater(10, 5, '%');
+ calculater(10, 5, '+');
+ calculater(10, 5, '-');
+ calculater(10, 5, '/');
+ calculater('Emma', 5, '+');
+ calculater(10, 'Emma', '-');
+ calculater(10, 5, 'Dobby');
