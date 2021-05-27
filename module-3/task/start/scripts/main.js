@@ -191,3 +191,38 @@ console.log(objItems);
 // different ways of calling variables from the object. 
 console.log(objItems.productName);
 console.log(objItems['price']);
+
+objItems.productName = "Chocolate";
+objItems['price'] = "0.80";
+
+console.log(objItems.productName);
+console.log(objItems['price']);
+console.log(objItems);
+// creating new Variables in our object. 
+objItems.flavour = 'BBQ';
+
+objItems['size'] = 'Large';
+
+console.log(objItems);
+
+// outputting times tables via a loop.
+
+function outputTimesTables(number){
+    for(multiplyer=1; multiplyer <= 12; multiplyer++){
+        sum = multiplyer * number;
+        strMessage = number + ' * ' + multiplyer + ' = ' + sum;
+        console.log(strMessage);
+    }
+}
+// Calling the tables. 
+// outputTimesTables(7);
+// outputTimesTables(1); 
+// outputTimesTables(2); 
+// outputTimesTables(3);
+// outputTimesTables(4);
+// outputTimesTables(5);
+
+// Code to create a loop that calls the times tables loop, passing in the next number to be *.
+for(counter=1; counter <= 12; counter++){
+    outputTimesTables(counter);
+}
