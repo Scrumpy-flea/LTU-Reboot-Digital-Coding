@@ -159,3 +159,35 @@ function drinkOrder(drink, size) {
  calculater('Emma', 5, '+');
  calculater(10, 'Emma', '-');
  calculater(10, 5, 'Dobby');
+
+// Array 
+let arrItems = [
+    productName, 
+    price, 
+    quantity, 
+    inStock, 
+    discountAmount
+];
+
+console.log(arrItems);
+
+let firstItem = arrItems[1];
+let lastItem = arrItems[4];
+
+console.log(firstItem);
+console.log(lastItem);
+
+// Objects
+
+objItems = {
+    productName:"carrots",
+    price:"0.30",
+    quantity:100, 
+    inStock:true, 
+    discountAmount:0
+};    
+    
+console.log(objItems);
+// different ways of calling variables from the object. 
+console.log(objItems.productName);
+console.log(objItems['price']);
