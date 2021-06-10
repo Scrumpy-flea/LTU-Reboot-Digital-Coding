@@ -226,3 +226,88 @@ function outputTimesTables(number){
 for(counter=1; counter <= 12; counter++){
     outputTimesTables(counter);
 }
+
+// shopping cart stuff
+// On mac press command and slash to comment in/out lines
+
+console.log(shoppingCart);
+
+function totalPriceOfShopping(arrCart, objCoupon){
+    console.log(arrCart);
+    console.log(objCoupon);
+    // Set totalPrice = 0 
+    let totalPrice = 0;
+    // Loop through arrCart 
+    for(arrCartKey=0; arrCartKey < arrCart.length; arrCartKey++){
+        let currentItem = arrCart[arrCartKey];
+        console.log(currentItem);
+        // Set itemPrice  quantity * price 
+        let currentItemPrice = currentItem.quantity * currentItem.price;
+        // update totalPrice + itemPrice
+        totalPrice = totalPrice + currentItemPrice;
+    }
+    // Return totalPrice 
+    totalPrice = totalPrice.toFixed(2);
+    return totalPrice;
+}
+
+objCouponData = {
+    type:'percent',
+    productType:['toiletries', 'condiment'],
+    value: '50'
+}
+
+console.log(totalPriceOfShopping(shoppingCart,objCouponData));
+function totalPriceOfShopping(arrCart,objCoupon){
+    console.log(objCoupon);
+    //SET totalPrice = 0
+    let totalPrice = 0;
+    //LOOP through arrCart
+    for(arrCartKey=0; arrCartKey < arrCart.length; arrCartKey++){
+        let currentItem = arrCart[arrCartKey];
+        // console.log(currentItem);
+        //SET itemPrice = quantity * price
+        let currentItemPrice = currentItem.quantity * currentItem.price;
+        // UPDATE totalPrice + itemPrice
+        if(objCoupon){
+            blnApplyDiscount = false;
+            if(objCoupon.productType == 'all'){
+                blnApplyDiscount = true;
+            }
+            if(objCoupon.productType.includes(currentItem.type)){
+                blnApplyDiscount = true;
+            }
+            switch(objCoupon.type){
+                case 'percent':
+                    if(blnApplyDiscount){
+                        currentItemPrice = (currentItemPrice / 100) * objCoupon.value;
+                    }
+                break;
+                case 'flat':
+                    if(blnApplyDiscount){
+                        currentItemPrice = currentItemPrice - objCoupon.value;
+                    }
+                break;
+            }
+        }
+        totalPrice = totalPrice + currentItemPrice;
+    }
+    //RETURN totalPrice
+    if(objCoupon){
+        if(objCoupon.type == 'fixed'){
+            totalPrice = totalPrice - objCoupon.value;
+        }
+    }
+    totalPrice = totalPrice.toFixed(2);
+    return totalPrice;
+}
+
+objCouponData = {
+    type:'percent',
+    productType:['toiletries','beverages'],
+    value:'50'
+}
+
+console.log(totalPriceOfShopping(shoppingCart,objCouponData));
+
+// Function to calculate how many items are in a given type
